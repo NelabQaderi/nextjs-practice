@@ -1,8 +1,10 @@
 
 import '@mantine/core/styles.css';
 
-import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+import { ColorSchemeScript, MantineProvider, Notification } from '@mantine/core';
 import MyNavbar from '@/components/Organisms/MyNavbar/MyNavbar';
+import '@mantine/notifications/styles.css';
+import { Notifications } from "@mantine/notifications";
 
 export const metadata = {
   title: 'My Mantine app',
@@ -18,6 +20,7 @@ export default function RootLayout({children}) {
       </head>
       <body>
         <MantineProvider>
+        <Notifications  position="top-right" zIndex={1000} />
           <MyNavbar>
             {children}
           </MyNavbar>
